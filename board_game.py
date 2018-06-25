@@ -1,21 +1,30 @@
-def game_size():
-    size = input("What size of board game would you like? ")
-    if size.isalpha() or size == '':
-        print ("Please enter a valid size." )
-        game_size()
-    elif int(size) >= 20:
-        print("That's a huge board game!")
-        game_size()
-    else:
-        return size
-        
-def create_board_game():
-    size = int(game_size())
+#Prints out the horizontal lines across based on the width entered
+def horizontal(width):
+  print(" ---" * width)
     
-    for x in range(size):
-        print(" ---" * size)
-        print("|   " * (size + 1))
-        
-    print(" ---" * size)
-       
-create_board_game()
+def vertical(width):
+  print("|   " * (width + 1))
+
+def create_board_game(height, width):
+  #Will print out vertically depending on height user entered
+  for x in range(height):
+    #Calls each of the horizontal and vertical functions
+    horizontal(width)
+    vertical(width)
+
+  #Close up the board game
+  horizontal(width)
+
+#Error handling      
+while True:
+  try:
+    height = int(input("What is the height of your board game? "))  
+  except ValueError:
+    print("Please enter a valid height")
+  try:
+    width = int(input("What is the width of your board game? "))
+  except ValueError:
+    print("Please enter a valid width")
+  else:
+    create_board_game(height, width)
+    break
