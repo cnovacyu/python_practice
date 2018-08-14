@@ -8,9 +8,13 @@ def collatz(number):
         return(3 * number + 1)
 
 #prompt user to enter a number
+#add in exception handling for non-integer values entered by user
 print("Enter number: ")
-num = int(input())
-
+try:
+    num = int(input())
+except ValueError:
+    print("Please enter an integer.")
+    
 #assign value to the product of running the Collatz sequence the first time with user's prompted entry
 nextnum = collatz(num)
 
