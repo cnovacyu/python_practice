@@ -11,8 +11,7 @@ grid = [['.', '.', '.', '.', '.', '.'],
 ['.', 'O', 'O', '.', '.', '.'],
 ['.', '.', '.', '.', '.', '.']]
 You can think of grid[x][y] as being the character at the x- and
-y-coordinates
-of a “picture” drawn with text characters. The (0, 0) origin
+y-coordinates of a “picture” drawn with text characters. The (0, 0) origin
 will be in the upper-left corner, the x-coordinates increase going right,
 and the y-coordinates increase going down.
 Copy the previous grid value, and write code that uses it to print the image.
@@ -31,8 +30,10 @@ Also, remember to pass the end keyword argument to print() if you don’t want
 a newline printed automatically after each print() call.'''
 
 def printimage(image):
-    for x in len(image) - 1:
-        for y in image[x][len(
+    for row in range(0, len(image)):
+        for column in range(0, len(image[row])):
+            print(image[row][column], end=" ")
+        print()
 
 grid = [['.', '.', '.', '.', '.', '.'],
 ['.', 'O', 'O', '.', '.', '.'],
