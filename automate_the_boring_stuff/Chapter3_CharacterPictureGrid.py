@@ -30,9 +30,9 @@ Also, remember to pass the end keyword argument to print() if you don’t want
 a newline printed automatically after each print() call.'''
 
 def printimage(image):
-    for row in range(0, len(image)):
-        for column in range(0, len(image[row])):
-            print(image[row][column], end=" ")
+    for column in range(0, 6):
+        for row in range(0, len(image)):
+            print(image[row][column], end='')
         print()
 
 grid = [['.', '.', '.', '.', '.', '.'],
