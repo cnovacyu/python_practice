@@ -1,4 +1,5 @@
-'''Write a function named displayInventory() that would take any possible
+'''Part 1:
+Write a function named displayInventory() that would take any possible
 “inventory” and display it like the following:
 Inventory:
 12 arrow
@@ -9,7 +10,6 @@ Inventory:
 Total number of items: 62
 Hint: You can use a for loop to loop through all the keys in a dictionary.'''
 
-#inventory.py
 stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
 def displayInventory(inventory):
@@ -20,4 +20,29 @@ def displayInventory(inventory):
         item_total += v
     print("Total number of items: " + str(item_total))
 
-displayInventory(stuff)
+#displayInventory(stuff)
+
+'''Part 2:
+Imagine that a vanquished dragon’s loot is represented as a list of strings
+like this:
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+Write a function named addToInventory(inventory, addedItems), where the
+inventory parameter is a dictionary representing the player’s inventory (like
+in the previous project) and the addedItems parameter is a list like dragonLoot.
+The addToInventory() function should return a dictionary that represents the
+updated inventory. Note that the addedItems list can contain multiples of the
+same item. Your code could look something like this:'''
+
+def addToInventory(inventory, addedItems):
+    numBrought = 0
+    for item in addedItems:
+        numBrought = addedItems.count(item)
+        if item not in inventory:
+            inventory.setdefault(item, numBrought)
+        else:
+            inventory[item] += 1
+   
+inv = {'gold coin': 42, 'rope': 1}
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+addToInventory(inv, dragonLoot)
+displayInventory(inv)
