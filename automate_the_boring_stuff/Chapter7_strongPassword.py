@@ -4,7 +4,7 @@
 import re
 
 # check for capital letters, lowercase letters and a number
-passRegex = re.compile(r'\w*[A-Z]+\w*\d*')
+passRegex = re.compile(r'\w*[A-Z]+\w*\d+')
 
 print('Type in your new password:')
 new_pass = input()
