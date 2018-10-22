@@ -22,21 +22,27 @@ def definePhrase():
 # Remove any white space characters from an inputted phrase
 def trimPhrase(phrase):
     #Regex searches for any non-white space characters
-    trimRegex = re.compile(r'\S+')
-    mo1 = trimRegex.search(phrase)
-    trim_phrase = mo1.group()
+    #***Need to fix regex - will remove words after a space in a sentence.
+    #Want to remove extra spaces before or after words.***
+    trimRegex = re.compile(r'(\S)+\s.*\w.*\S.*')
+    mo = trimRegex.search(phrase)
+    trim_phrase = mo.group()
     #test Regex
-    #print(len(mo.group()))
     #print(len(phrase))
+    #print(len(mo.group()))
+    #print(trim_phrase)
     return(trim_phrase)
 
 # Remove any characters the user inputs from the trimmed phrase in trimPhrase
 def stripPhrase(trim_phrase, strip):
     #the Regex takes whatever the user inputs and will search the phrase. 
     #will ignore case with re.IGNORECASE
-    stripRegex = re.compile(re.escape(strip), re.IGNORECASE)
-    #the sub function will take the matched Regex and replace it with ''
-    strip_phrase = stripRegex.sub('', trim_phrase)
+    for char in strip:
+        stripRegex = re.compile(char, re.IGNORECASE)
+        #the sub function will take the matched Regex and replace it with ''
+        strip_phrase = stripRegex.sub('', trim_phrase)
+        trim_phrase = strip_phrase
+    
     print('Here is your modified phrase: \n' + strip_phrase)
     #test second part of Regex
     #print(len(strip_phrase))
