@@ -12,7 +12,7 @@ variables = ['adjective', 'noun', 'verb', 'noun']
 for var in variables:
     print("Enter a " + var + ':')
     libInput = input()
-    madLibRegex = re.compile((var)+'?', re.IGNORECASE)
+    madLibRegex = re.compile(var, re.IGNORECASE)
     #the sub function will take the matched Regex and replace it with user input
     #sub functions has count parameter to indicate how many subs should occur
     madLibFiller = madLibRegex.sub(libInput, madLibContent, 1)
