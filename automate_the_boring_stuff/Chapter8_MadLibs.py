@@ -1,3 +1,8 @@
+#! python 3
+# Opens and reads a file that contains a mad lib. Ask a user for inputs 
+# for placeholders in the mad lib. Create a new file that replaces the 
+# placeholders in the mad lib with user inputs. Do not overwrite the original file.
+
 import os, re, pyperclip
 
 # Open the file and read the contents
