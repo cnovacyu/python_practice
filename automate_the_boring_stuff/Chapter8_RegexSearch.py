@@ -23,8 +23,9 @@ for filename in os.listdir(r'C:\Users\cnovacy\Documents\01 - Projects\python_pra
         # Open each file and read content
         checkFile = open(filename, 'r')
         fileContent = checkFile.read()
+        checkFile.close()
         # Search each file for the Regex phrase entered by the user
         #mo = searchRegex.search(fileContent)
         mo = searchRegex.findall(fileContent)
         print(filename + ' contains your search phrase: \"' + search + '\" ' + str(len(mo)) + ' times')
-    checkFile.close()
+    
