@@ -28,4 +28,3 @@ for filename in os.listdir(r'C:\Users\cnovacy\Documents\01 - Projects\python_pra
         #mo = searchRegex.search(fileContent)
         mo = searchRegex.findall(fileContent)
         print(filename + ' contains your search phrase: \"' + search + '\" ' + str(len(mo)) + ' times')
-    
