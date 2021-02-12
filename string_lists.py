@@ -5,10 +5,7 @@ def string_lists():
     word = input('Please enter a word: ').upper()
     print(f'Your word is {word}')
 
-    new_word = ""
-
-    for letter in reversed(word):
-        new_word += ''.join(letter)
+    new_word = word[::-1]
 
     print(f'{word} backwards is {new_word}')
 
