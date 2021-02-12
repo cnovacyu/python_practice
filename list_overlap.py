@@ -5,7 +5,7 @@ import random
 
 def generate_list():
 
-    # determines how long the random list will be
+    # determines how long the random list will be from length of 1 to 20
     n = random.randint(1, 20)
 
     # samples numbers from 1 to 50 n times to create random list
