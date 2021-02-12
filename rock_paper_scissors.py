@@ -1,3 +1,8 @@
+# Make a two-player rock-paper-scissors game. Ask for player plays (using input), compare them, print out
+# a message of congratulations to the winner, and ask if the players want to start a new game
+
+# Added bomb as a secret option that always wins against rock, paper, and scissors
+
 import sys
 
 def winner(plays, wins):
